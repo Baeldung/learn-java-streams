@@ -1,8 +1,3 @@
-# About this repo
+# Learn Java Streams - Introduction to Java Streams
 
-This is the codebase of the **Learn Java Streams** course.
-
-If you're already a student of the course you can start exploring this through the lesson notes in the course.
-
-Note that the code for each module is hosted on its own branch, you'll have to switch to the branch corresponding to the module you're on, for example: `git checkout module1`
-
+This is the codebase for Module "Introduction to Java Streams" of Learn Java Streams.
