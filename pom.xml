@@ -12,5 +12,7 @@
     <packaging>pom</packaging>
 
     <modules>
+	<module>functional-programming-and-java-streams-start</module>
+	<module>functional-programming-and-java-streams-end</module>
     </modules>
 </project>
