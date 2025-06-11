@@ -12,5 +12,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>creating-streams-start</module>
+        <module>creating-streams-end</module>
     </modules>
 </project>
