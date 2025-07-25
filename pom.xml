@@ -14,5 +14,7 @@
     <modules>
         <module>creating-streams-start</module>
         <module>creating-streams-end</module>
+        <module>intermediate-and-terminal-operations-start</module>
+        <module>intermediate-and-terminal-operations-end</module>
     </modules>
 </project>
