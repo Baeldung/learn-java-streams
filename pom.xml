@@ -12,7 +12,9 @@
     <packaging>pom</packaging>
 
     <modules>
-	<module>functional-programming-and-java-streams-start</module>
-	<module>functional-programming-and-java-streams-end</module>
+        <module>functional-programming-and-java-streams-start</module>
+        <module>functional-programming-and-java-streams-end</module>
+        <module>lambdas-in-java-start</module>
+        <module>lambdas-in-java-end</module>
     </modules>
 </project>
