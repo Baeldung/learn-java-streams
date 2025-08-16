@@ -141,13 +141,16 @@ class JavaStreamsUnitTest {
     }
 
     @Test
-    void givenTasks_whenJoiningCodesWithStream_thenCorrectResult() {
-        String combinedCodes = tasks.stream()
+    void givenListOfTasks_whenJoiningCodesUsingStream_thenCorrectStringIsReturned() {
+        String combinedCodes = joinCodesWithStream(tasks);
+        assertEquals("T1, T2, T3", combinedCodes);
+    }
+
+    String joinCodesWithStream(List<Task> tasks) {
+        return tasks.stream()
             .map(Task::getCode)
             .filter(code -> code.startsWith("T"))
             .collect(Collectors.joining(", "));
-
-        assertEquals("T1, T2, T3", combinedCodes);
     }
 
 }
