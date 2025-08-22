@@ -12,5 +12,9 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>filter-start</module>
+        <module>filter-end</module>
+        <module>limit-skip-start</module>
+        <module>limit-skip-end</module>
     </modules>
 </project>
