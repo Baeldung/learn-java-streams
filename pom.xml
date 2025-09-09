@@ -12,9 +12,13 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>map-and-flatmap-start</module>
+        <module>map-and-flatmap-end</module>
         <module>filter-start</module>
         <module>filter-end</module>
         <module>limit-skip-start</module>
         <module>limit-skip-end</module>
+        <module>peek-start</module>
+        <module>peek-end</module>
     </modules>
 </project>
