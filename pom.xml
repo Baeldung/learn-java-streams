@@ -18,6 +18,8 @@
         <module>filter-end</module>
         <module>limit-skip-start</module>
         <module>limit-skip-end</module>
+        <module>sorted-distinct-start</module>
+        <module>sorted-distinct-end</module>
         <module>peek-start</module>
         <module>peek-end</module>
     </modules>
