@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <description>Learn Java Streams - Lambdas in Java - End</description>
+    <description>Learn Java Streams - Functional Interfaces and Lambdas in Java - End</description>
 
     <groupId>com.baeldung</groupId>
-    <artifactId>lambdas-in-java-end</artifactId>
+    <artifactId>functional-interfaces-and-lambdas-in-java-end</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
