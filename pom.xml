@@ -12,5 +12,7 @@
     <packaging>pom</packaging>
 
     <modules>
+	<module>count-min-max-start</module>
+	<module>count-min-max-end</module>
     </modules>
 </project>
