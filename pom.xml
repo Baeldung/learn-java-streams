@@ -12,7 +12,9 @@
     <packaging>pom</packaging>
 
     <modules>
-	<module>count-min-max-start</module>
-	<module>count-min-max-end</module>
+        <module>tomap-tolist-toset-start</module>
+        <module>tomap-tolist-toset-end</module>
+        <module>count-min-max-start</module>
+        <module>count-min-max-end</module>
     </modules>
 </project>
