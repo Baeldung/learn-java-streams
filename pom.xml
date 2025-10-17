@@ -16,5 +16,11 @@
         <module>tomap-tolist-toset-end</module>
         <module>count-min-max-start</module>
         <module>count-min-max-end</module>
+        <module>any-all-none-match-start</module>
+        <module>any-all-none-match-end</module>
+        <module>find-first-find-any-start</module>
+        <module>find-first-find-any-end</module>
+        <module>reduce-start</module>
+        <module>reduce-end</module>
     </modules>
 </project>
