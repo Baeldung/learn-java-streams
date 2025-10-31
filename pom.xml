@@ -12,15 +12,19 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>tomap-tolist-toset-start</module>
-        <module>tomap-tolist-toset-end</module>
-        <module>count-min-max-start</module>
-        <module>count-min-max-end</module>
         <module>any-all-none-match-start</module>
         <module>any-all-none-match-end</module>
+        <module>common-operations-patterns-start</module>
+        <module>common-operations-patterns-end</module>
+        <module>count-min-max-start</module>
+        <module>count-min-max-end</module>
         <module>find-first-find-any-start</module>
         <module>find-first-find-any-end</module>
+        <module>groupingby-partitioningby-start</module>
+        <module>groupingby-partitioningby-end</module>
         <module>reduce-start</module>
         <module>reduce-end</module>
+        <module>tomap-tolist-toset-start</module>
+        <module>tomap-tolist-toset-end</module>
     </modules>
 </project>
