@@ -14,6 +14,8 @@
     <modules>
         <module>any-all-none-match-start</module>
         <module>any-all-none-match-end</module>
+        <module>collect-start</module>
+        <module>collect-end</module>
         <module>common-operations-patterns-start</module>
         <module>common-operations-patterns-end</module>
         <module>count-min-max-start</module>
