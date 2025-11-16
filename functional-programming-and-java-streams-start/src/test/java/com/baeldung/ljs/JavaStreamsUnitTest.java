@@ -30,9 +30,21 @@ class JavaStreamsUnitTest {
         return String.join(", ", codes);
     }
 
+    public String joinCodesWithStream(List<Task> tasks) {
+        return tasks.stream()
+                .map(Task::getCode)
+                .filter(code -> code.startsWith("T"))
+                .collect(Collectors.joining(", "));
+    }
+
     @Test
     void givenListOfTasks_whenJoiningCodesUsingImperative_thenCorrectStringIsReturned() {
         String combinedCodes = joinCodesImperatively(tasks);
         assertEquals("T1, T2, T3", combinedCodes);
+    }
+
+    @Test
+    void givenListOfTasks_whenJoiningCodesUsingStream_thenGetTheSameAsIterativeApproach() {
+        assertEquals(joinCodesWithStream(tasks), joinCodesImperatively(tasks));
     }
 }
