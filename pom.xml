@@ -12,5 +12,9 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>numeric-streams-start</module>
+        <module>numeric-streams-end</module>
+        <module>gatherers-start</module>
+        <module>gatherers-end</module>
     </modules>
 </project>
