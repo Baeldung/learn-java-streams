@@ -16,5 +16,7 @@
         <module>numeric-streams-end</module>
         <module>gatherers-start</module>
         <module>gatherers-end</module>
+        <module>infinite-streams-start</module>
+        <module>infinite-streams-end</module>
     </modules>
 </project>
