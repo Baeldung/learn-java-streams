@@ -12,6 +12,8 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>parallel-streams-start</module>
+        <module>parallel-streams-end</module>
         <module>numeric-streams-start</module>
         <module>numeric-streams-end</module>
         <module>gatherers-start</module>
