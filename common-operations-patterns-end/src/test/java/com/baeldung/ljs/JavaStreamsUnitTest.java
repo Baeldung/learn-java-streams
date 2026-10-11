@@ -59,7 +59,7 @@ class JavaStreamsUnitTest {
     );
 
     @Test
-    void whenFlatMappingAndFiltering_thenReturnsCorrectTasksInProgress() {
+    void whenFlatMappingAndFiltering_thenReturnsCorrectTasksOnHold() {
         List<Task> uniqueTasks = campaigns.stream()
             .flatMap(c -> c.getTasks().stream())
             .filter(task -> task.getStatus().equals(TaskStatus.ON_HOLD))
