@@ -1,6 +1,7 @@
 package com.baeldung.ljs;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 import java.time.LocalDate;
 import java.util.Collection;
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ForkJoinTask;
 
 import org.junit.jupiter.api.Test;
 
@@ -86,22 +88,14 @@ class JavaStreamsUnitTest {
     void whenUsingCustomPool_thenIsIsolatedFromCommonPool() throws InterruptedException, ExecutionException {
         ForkJoinPool customPool = new ForkJoinPool(4);
         try {
-            Callable<Long> task = () -> tasks.parallelStream()
+            Callable<List<String>> task = () -> tasks.parallelStream()
               .map(t -> {
-                  try {
-                      // Simulate some work
-                      Thread.sleep(10);
-                  } catch (InterruptedException e) {
-                      Thread.currentThread()
-                        .interrupt();
-                  }
-                  return t;
+                  assertSame(customPool, ForkJoinTask.getPool());
+                  return t.getCode();
               })
-              .count();
-            Long taskCount = customPool.submit(task)
-              .get();
-            assertEquals(8, taskCount);
-
+              .toList();
+            List<String> taskCodes = customPool.submit(task).get();
+            assertEquals(8, taskCodes.size());
         } finally {
             customPool.shutdown();
         }
