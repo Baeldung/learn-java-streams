@@ -19,35 +19,35 @@ import com.baeldung.ljs.domain.model.TaskStatus;
 class JavaStreamsUnitTest {
 
     private final Collection<Task> tasks = List.of(
-      new Task("T1", "John's house construction", "Construction of John's house in LA", LocalDate.of(2024, 1, 1), TaskStatus.IN_PROGRESS),
-      new Task("T2", "Thomas High School reparation", "Reparation of Thomas High School in London", LocalDate.of(2024, 8, 20), TaskStatus.DONE),
-      new Task("T3", "Flower Cafe construction", "Construction of Flower Cafe in Bucharest", LocalDate.of(2025, 6, 30), TaskStatus.IN_PROGRESS),
-      new Task("T4", "Lily's house construction", "Construction of Lily's house in NY", LocalDate.of(2028, 11, 15), TaskStatus.DONE),
-      new Task("T5", "Bee Steak House restoration", "Restoration of Bee Steak House in Constanta", LocalDate.of(2032, 9, 25), TaskStatus.ON_HOLD),
-      new Task("T6", "West Outer Ring street construction", "Construction of West Outer Ring street in Hamburg", LocalDate.of(2035, 5, 18),
-        TaskStatus.IN_PROGRESS),
-      new Task("T7", "Green river bridge restoration", "Restoration of Green river bridge in Dublin", LocalDate.of(2029, 2, 22), TaskStatus.ON_HOLD),
-      new Task("T8", "Jane's Jacket factory reparation", "Reparation of Jane's Jacket factory", LocalDate.of(2028, 6, 10), TaskStatus.IN_PROGRESS));
+        new Task("T1", "John's house construction", "Construction of John's house in LA", LocalDate.of(2024, 1, 1), TaskStatus.IN_PROGRESS),
+        new Task("T2", "Thomas High School reparation", "Reparation of Thomas High School in London", LocalDate.of(2024, 8, 20), TaskStatus.DONE),
+        new Task("T3", "Flower Cafe construction", "Construction of Flower Cafe in Bucharest", LocalDate.of(2025, 6, 30), TaskStatus.IN_PROGRESS),
+        new Task("T4", "Lily's house construction", "Construction of Lily's house in NY", LocalDate.of(2028, 11, 15), TaskStatus.DONE),
+        new Task("T5", "Bee Steak House restoration", "Restoration of Bee Steak House in Constanta", LocalDate.of(2032, 9, 25), TaskStatus.ON_HOLD),
+        new Task("T6", "West Outer Ring street construction", "Construction of West Outer Ring street in Hamburg", LocalDate.of(2035, 5, 18),
+            TaskStatus.IN_PROGRESS),
+        new Task("T7", "Green river bridge restoration", "Restoration of Green river bridge in Dublin", LocalDate.of(2029, 2, 22), TaskStatus.ON_HOLD),
+        new Task("T8", "Jane's Jacket factory reparation", "Reparation of Jane's Jacket factory", LocalDate.of(2028, 6, 10), TaskStatus.IN_PROGRESS));
 
     @Test
     void whenUsingParallelStream_thenReturnsCorrectCount() {
         long taskCount = tasks.parallelStream()
-          .count();
+            .count();
         assertEquals(8, taskCount);
     }
 
     @Test
     void whenUsingParallelMethod_thenReturnsCorrectCount() {
         long taskCount = tasks.stream()
-          .parallel()
-          .count();
+            .parallel()
+            .count();
         assertEquals(8, taskCount);
     }
 
     @Test
     void whenUsingForEachInParallel_thenOrderIsNotGuaranteed() {
         tasks.parallelStream()
-          .forEach(t -> System.out.println(t.getCode()));
+            .forEach(t -> System.out.println(t.getCode()));
     }
 
     // This test is commented out because it's designed to demonstrate an anti-pattern:
@@ -79,8 +79,8 @@ class JavaStreamsUnitTest {
     @Test
     void whenCollectingInParallel_thenIsThreadSafe() {
         List<String> codes = tasks.parallelStream()
-          .map(Task::getCode)
-          .toList();
+            .map(Task::getCode)
+            .toList();
         assertEquals(8, codes.size());
     }
 
@@ -89,11 +89,11 @@ class JavaStreamsUnitTest {
         ForkJoinPool customPool = new ForkJoinPool(4);
         try {
             Callable<List<String>> task = () -> tasks.parallelStream()
-              .map(t -> {
-                  assertSame(customPool, ForkJoinTask.getPool());
-                  return t.getCode();
-              })
-              .toList();
+                .map(t -> {
+                    assertSame(customPool, ForkJoinTask.getPool());
+                    return t.getCode();
+                })
+                .toList();
             List<String> taskCodes = customPool.submit(task).get();
             assertEquals(8, taskCodes.size());
         } finally {

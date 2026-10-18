@@ -1,6 +1,7 @@
 package com.baeldung.ljs.domain.model;
 
 public enum TaskStatus {
+
     //@formatter:off
     TO_DO("To Do"),
     IN_PROGRESS("In Progress"),
