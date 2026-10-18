@@ -120,7 +120,7 @@ class JavaStreamsUnitTest {
     void givenTasks_whenPartitionedThenGrouped_thenCountsPerStatusPerPartition() {
         Map<Boolean, Map<TaskStatus, Long>> counts = tasks.stream()
             .collect(Collectors.partitioningBy(
-                t-> t.getDueDate().isBefore(LocalDate.of(2030, 1, 1)),
+                t -> t.getDueDate().isBefore(LocalDate.of(2030, 1, 1)),
                 Collectors.groupingBy(Task::getStatus, Collectors.counting())));
 
         Map<TaskStatus, Long> before2030 = counts.get(true);

@@ -19,6 +19,7 @@ import com.baeldung.ljs.domain.model.Task;
 import com.baeldung.ljs.domain.model.TaskStatus;
 
 class JavaStreamsUnitTest {
+
     private final List<Task> tasks = List.of(
         new Task("T1", "John's house construction", "Construction of John's house in LA", LocalDate.of(2045, 1, 1), TaskStatus.IN_PROGRESS),
         new Task("D2", "Tommy", "Preparation for the exam", LocalDate.of(2024, 5, 20), TaskStatus.ON_HOLD),
@@ -26,11 +27,11 @@ class JavaStreamsUnitTest {
         new Task("T3", "Flower Cafe construction", "Construction of Flower Cafe in Bucharest", LocalDate.of(2040, 6, 30), TaskStatus.IN_PROGRESS),
         new Task("T4", "Lily's house construction", "Construction of Lily's house in NY", LocalDate.of(2020, 11, 15), TaskStatus.DONE),
         new Task("T5", "Bee Steak House restoration", "Restoration of Bee Steak House in Constanta", LocalDate.of(2070, 9, 25), TaskStatus.ON_HOLD),
-        new Task("T6", "West Outer Ring street construction", "Construction of West Outer Ring street in Hamburg", LocalDate.of(2055, 5, 18), TaskStatus.IN_PROGRESS),
+        new Task("T6", "West Outer Ring street construction", "Construction of West Outer Ring street in Hamburg", LocalDate.of(2055, 5, 18),
+            TaskStatus.IN_PROGRESS),
         new Task("T7", "Green river bridge restoration", "Restoration of Green river bridge in Dublin", LocalDate.of(2029, 2, 22), TaskStatus.ON_HOLD),
         new Task("D7", "Big Bang restoration", "Restoration of BigBan in London", LocalDate.of(2029, 2, 22), TaskStatus.DONE),
-        new Task("T8", "Jane's Jacket factory reparation", "Reparation of Jane's Jacket factory", LocalDate.of(2050, 6, 10), TaskStatus.IN_PROGRESS)
-    );
+        new Task("T8", "Jane's Jacket factory reparation", "Reparation of Jane's Jacket factory", LocalDate.of(2050, 6, 10), TaskStatus.IN_PROGRESS));
 
     @Test
     void whenFilteringMappingAndCollecting_thenReturnsCorrectList() {
@@ -53,10 +54,9 @@ class JavaStreamsUnitTest {
         assertEquals("D2D7", codes);
     }
 
-    private final Collection<Campaign> campaigns= List.of(
+    private final Collection<Campaign> campaigns = List.of(
         new Campaign("Project A", List.of(tasks.getFirst(), tasks.get(1))),
-        new Campaign("Project B", List.of(tasks.get(1), tasks.get(2)))
-    );
+        new Campaign("Project B", List.of(tasks.get(1), tasks.get(2))));
 
     @Test
     void whenFlatMappingAndFiltering_thenReturnsCorrectTasksOnHold() {
