@@ -17,8 +17,7 @@ class JavaStreamsUnitTest {
         new Task("T1", "Task 1", "Task 1", LocalDate.now()),
         new Task("T2", "Task 2", "Task 2", LocalDate.now()),
         new Task("T3", "Task 3", "Task 3", LocalDate.now()),
-        new Task("S1", "Task 4", "Task 4", LocalDate.now())
-    );
+        new Task("S1", "Task 4", "Task 4", LocalDate.now()));
 
     String joinCodesImperatively(List<Task> tasks) {
         List<String> codes = new ArrayList<>();

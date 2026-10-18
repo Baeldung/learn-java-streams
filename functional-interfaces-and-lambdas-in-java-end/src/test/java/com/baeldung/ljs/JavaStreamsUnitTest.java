@@ -24,12 +24,12 @@ class JavaStreamsUnitTest {
         new Task("T1", "Task 1", "Task 1", LocalDate.now()),
         new Task("T2", "Task 2", "Task 2", LocalDate.now()),
         new Task("T3", "Task 3", "Task 3", LocalDate.now()),
-        new Task("S1", "Task 4", "Task 4", LocalDate.now())
-    );
+        new Task("S1", "Task 4", "Task 4", LocalDate.now()));
 
     @Test
     void givenFunctionalInterfacesAsAnonymousClasses_whenExecutingThem_thenAllReturnCorrectResult() {
         Function<String, Integer> strLength = new Function<String, Integer>() {
+
             @Override
             public Integer apply(String s) {
                 return s.length();
@@ -37,6 +37,7 @@ class JavaStreamsUnitTest {
         };
 
         BiFunction<Integer, Integer, Double> divideToDouble = new BiFunction<Integer, Integer, Double>() {
+
             @Override
             public Double apply(Integer s1, Integer s2) {
                 return s1.doubleValue() / s2.doubleValue();
@@ -44,6 +45,7 @@ class JavaStreamsUnitTest {
         };
 
         Consumer<String> printString = new Consumer<String>() {
+
             @Override
             public void accept(String s) {
                 System.out.println(s);
@@ -51,6 +53,7 @@ class JavaStreamsUnitTest {
         };
 
         Supplier<String> idGenerator = new Supplier<String>() {
+
             @Override
             public String get() {
                 return UUID.randomUUID()
@@ -59,6 +62,7 @@ class JavaStreamsUnitTest {
         };
 
         Predicate<Integer> isEven = new Predicate<Integer>() {
+
             @Override
             public boolean test(Integer s) {
                 return s % 2 == 0;
@@ -112,7 +116,9 @@ class JavaStreamsUnitTest {
         String summaryConnector = "is due on";
 
         // Uncommenting the next line would break the lambda below:
-        // summaryConnector = "changed connector"; // Compile-time error: not effectively final Unchanged:  // suffix = "overdue"; // Compile-time error: not effectively final
+        // summaryConnector = "changed connector"; // Compile-time error: not
+        // effectively final Unchanged: // suffix = "overdue"; // Compile-time error:
+        // not effectively final
 
         Task t1 = new Task("T1", "Task Name", "Task Description", LocalDate.of(2050, 1, 1));
 
