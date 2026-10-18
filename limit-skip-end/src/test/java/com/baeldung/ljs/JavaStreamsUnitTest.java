@@ -104,7 +104,7 @@ class JavaStreamsUnitTest {
     }
 
     static long offset(int page, int size) {
-        return ((long) (page - 1 ) * size);
+        return ((long) (page - 1) * size);
     }
 
     @Test

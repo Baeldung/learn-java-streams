@@ -3,8 +3,8 @@ package com.baeldung.ljs.domain.model;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Task implements Comparable<Task>{
-    
+public class Task implements Comparable<Task> {
+
     private String code;
 
     private String name;
@@ -20,12 +20,10 @@ public class Task implements Comparable<Task>{
         this.dueDate = dueDate;
     }
 
-    
     public String getCode() {
         return code;
     }
 
-    
     public void setCode(String code) {
         this.code = code;
     }
@@ -58,11 +56,13 @@ public class Task implements Comparable<Task>{
     public String toString() {
         return "Task [code= " + code + "name=" + name + ", description=" + description + ", dueDate=" + dueDate + "]";
     }
-    
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Task other)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof Task other))
+            return false;
         return Objects.equals(this.code, other.code);
     }
 
@@ -70,7 +70,6 @@ public class Task implements Comparable<Task>{
     public int hashCode() {
         return Objects.hash(code);
     }
-
 
     @Override
     public int compareTo(Task other) {

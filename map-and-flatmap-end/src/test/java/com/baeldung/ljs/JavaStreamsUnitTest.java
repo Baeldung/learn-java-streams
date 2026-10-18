@@ -121,12 +121,12 @@ class JavaStreamsUnitTest {
             .flatMap(task -> task.getLabels()
                 .stream())
             .forEach(actual::add);
-        
+
         // equivalent:
-        //        tasks.stream()
-        //          .map(Task::getLabels)
-        //          .flatMap(Collection::stream)
-        //          .forEach(actual::add);
+        // tasks.stream()
+        // .map(Task::getLabels)
+        // .flatMap(Collection::stream)
+        // .forEach(actual::add);
 
         assertEquals(expected, actual);
     }
@@ -145,7 +145,7 @@ class JavaStreamsUnitTest {
         tasks.stream()
             .flatMap(task -> task.getLabels()
                 .stream())
-            .map(String::toUpperCase)
+            .map(label -> label.toUpperCase(Locale.ROOT))
             .forEach(actual::add);
 
         assertEquals(expected, actual);

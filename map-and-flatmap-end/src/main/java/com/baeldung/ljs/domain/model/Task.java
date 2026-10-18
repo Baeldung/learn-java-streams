@@ -23,7 +23,6 @@ public class Task {
         this.labels = labels;
     }
 
-
     public String getCode() {
         return code;
     }

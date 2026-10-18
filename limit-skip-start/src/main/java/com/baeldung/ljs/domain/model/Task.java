@@ -3,7 +3,7 @@ package com.baeldung.ljs.domain.model;
 import java.time.LocalDate;
 
 public class Task {
-    
+
     private String code;
 
     private String name;
@@ -19,12 +19,10 @@ public class Task {
         this.dueDate = dueDate;
     }
 
-    
     public String getCode() {
         return code;
     }
 
-    
     public void setCode(String code) {
         this.code = code;
     }

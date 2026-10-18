@@ -6,6 +6,7 @@ import java.util.List;
 import com.baeldung.ljs.domain.model.Task;
 
 class JavaStreamsUnitTest {
+
     private final List<Task> tasks = List.of(
         new Task("T1", "John's house construction", "Construction of John's house in LA", LocalDate.of(2024, 1, 1)),
         new Task("T2", "Thomas High School reparation", "Reparation of Thomas High School in London", LocalDate.of(2024, 8, 20)),
